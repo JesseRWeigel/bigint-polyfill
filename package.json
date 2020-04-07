@@ -9,7 +9,7 @@
   "author": "Paul Grau",
   "license": "MIT",
   "dependencies": {
-    "big-integer": "^1.6.36"
+    "big-integer": "^1.6.48"
   },
   "devDependencies": {
     "mocha": "^5.2.0"

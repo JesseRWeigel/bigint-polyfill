@@ -43,7 +43,7 @@ var nativeFunction = function nativeFunction(operator, a) {
 
     case 'pow':
       return function (b) {
-        return new BigInt(a ** b);
+        return new BigInt(Math.pow(a, b));
       };
     // Bitwise shift operators
 
@@ -211,7 +211,7 @@ var BigInt = /*#__PURE__*/function () {
       var elements = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 8;
       var arr = new ArrayBuffer(elements);
       var uint8arr = new Uint8Array(arr);
-      var intarr = this.value.toArray(2 ** 8).value;
+      var intarr = this.value.toArray(Math.pow(2, 8)).value;
       if (littleEndian) uint8arr.set(intarr.reverse(), 0);else uint8arr.set(intarr, elements - intarr.length);
       return uint8arr;
     }
@@ -255,7 +255,7 @@ var BigInt = /*#__PURE__*/function () {
         array = Array.from(uint8arr);
       }
 
-      return new BigInt(_BigInt.fromArray(array, 2 ** 8));
+      return new BigInt(_BigInt.fromArray(array, Math.pow(2, 8)));
     }
   }]);
 
